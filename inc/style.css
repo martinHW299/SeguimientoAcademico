@@ -1,0 +1,27 @@
+body{
+	background-color: #779ECB;
+}
+table {
+	background-color: white;
+ 	border: #b2b2b2 1px solid;
+ 	text-align: center;
+}
+td, th {
+  border: black 1px solid;
+}
+.login{
+	width: 16%;
+	height: 220px;
+	margin-top: 3%;
+	background-color: white;
+	border-radius: 10px;
+}
+.inputTxt{
+	text-align: left;
+	margin-left: 20%;
+}
+#administrador{
+	background-color: white;
+	width: 12%;
+	margin-left: 5px;
+}
