@@ -1,7 +1,7 @@
 <?php 
 	function connectSQL(){
 		$servername = "localhost";
-		$database = "academico";
+		$database = "seguimiento_academico";
 		$username = "root";
 		$password = "pbbs1959";
 		// Create connection

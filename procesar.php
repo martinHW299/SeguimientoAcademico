@@ -37,15 +37,17 @@
 			header("Location: index.php");
 		}
 	}elseif ($_POST['entity'] == "adminsitrador") {
-		$query = "SELECT password from administradores where Nombre = \"" . $username . "\"";
+		$query = "SELECT contrasena from administradores where Nombre = \"" . $username . "\"";
 		$result = ($conn->query($query))->fetch_row();
 
 		if($result[0] == $password){
-			header("Location: administrador.php");
+			// header("Location: administrador.php");
+			header("Location: menu_administracion.php");
 		}else{
 			header("Location: index.php");
 		}
 	}else{
 		header("Location: index.php");
 	}
+	mysqli_close($conn);
 ?>

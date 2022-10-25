@@ -19,6 +19,7 @@
 				" WHERE idESTUDIANTE = " . $_COOKIE['estudiantes'][$i].
 				" AND idMATERIA = " . $_COOKIE['materias'][$i];
 			mysqli_query($conn, $query);
+			mysqli_close($conn);
 		}
 	}
 	header("Location: index.php");

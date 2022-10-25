@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	left: 0; /*Margen de derecha*/
+	top: 0;		/*Margen arriba*/ 
+}
+
+body {
+	font-family: Georgia;
+  	background-repeat: no-repeat;
+  	background-position: center;
+   	background-size: 30%;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+#Nav {
+	width:100%; /*Ancho*/
+	height: 60px; /*Alto*/
+	background: royalblue;
+}
+
+#Nav h1 {
+	color:black; /*Color de letra*/
+	font-family: arial; /*Tipo de letra*/ 
+	padding: 10px; /*Margen*/
+	font-size: 50px;/*tamano letra*/
+}
+
+.Titulo {
+	background:white;
+	text-align: center; /*Alinear al centro*/
+	font-family: arial; /*Tipo de letra*/ 
+	font-size: 50px;/*tamano letra*/
+	margin-top:  50px; /*Margen desde arriba*/
+}
