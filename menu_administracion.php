@@ -18,11 +18,11 @@
 	<h1 class="Titulo" id="Tituloo">Seleccione una de las opciones del menu</h1>
 
 	<div class="d-grid gap-2 col-6 mx-auto">
-	<button class="btn btn-outline-primary" type="button" onclick="location.href=''">Creacion de Materias</button>
+	<button class="btn btn-outline-primary" type="button" onclick="location.href='registromaterias.php'">Creacion de Materias</button>
 	<button class="btn btn-outline-primary" type="button" onclick="location.href=''">Asignar materias a los Docentes</button>
 	<button class="btn btn-outline-primary" type="button" onclick="location.href='asignar.html'">Asignar materias a los estudiantes</button>
 	<button class="btn btn-outline-primary" type="button" onclick="location.href='registrar_docente.html'">Registrar Docentes</button>
-	<button class="btn btn-outline-primary" type="button" onclick="location.href=''">Registrar estudiantes</button>
+	<button class="btn btn-outline-primary" type="button" onclick="location.href='registroestudiantes.php'">Registrar estudiantes</button>
 	</div>
 	
 
