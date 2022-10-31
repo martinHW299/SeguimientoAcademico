@@ -1,7 +1,7 @@
 <?php
 	include_once("inc/head.php");
 ?>
-
+<center>
 <table>
   <tr>
     <th>Materia</th>
@@ -16,27 +16,25 @@
 	$name= htmlentities($_COOKIE['user']);
 	$mysqli = connectSQL();
 
-	$str = "SELECT idESTUDIANTE FROM estudiantes where NOMBRE = \"" . $name. "\"";
+	$str = "SELECT id_estudiante FROM estudiantes where NOMBRE = \"" . $name. "\"";
 	$res = $mysqli->query($str);
 	$idEstudiante = $res->fetch_row()[0];
 
-	$query = "SELECT * FROM parciales WHERE idESTUDIANTE = \"" . $idEstudiante . "\"";
+	$query = "SELECT * FROM parciales WHERE id_estudiante = " . $idEstudiante;
 	$result = $mysqli->query($query);
 
 	/* fetch object array */
 	while ($row = mysqli_fetch_row($result)) {
-		$query = "SELECT MATERIA FROM materias WHERE idMATERIA = \"" . $row[1] . "\"";
-		$resultado = $mysqli->query($query);
-		$materia = $resultado->fetch_row()[0];
 	    echo "<tr>";
-	    echo "<td>" . $materia . "</td>";
-	    echo "<td>" . $row[2] . "</td>";
-	    echo "<td>" . $row[3] . "</td>";
 	    echo "<td>" . $row[4] . "</td>";
-	    echo "<td>" . ($row[2]+$row[3]+$row[4])/3 . "</td>";
+	    echo "<td>" . $row[0] . "</td>";
+	    echo "<td>" . $row[1] . "</td>";
+	    echo "<td>" . $row[2] . "</td>";
+	    echo "<td>" . ($row[0]+$row[1]+$row[2])/3 . "</td>";
 	    echo "</tr>";
 	}
 	mysqli_close($mysqli);
-	echo "</table>";
+	echo "</table><br>";
+	echo "<button><a href=\"index.php\">Salir</a></button></center>";
 	include_once("inc/foot.php");
 ?>	

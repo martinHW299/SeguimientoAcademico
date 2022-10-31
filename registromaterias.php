@@ -78,20 +78,33 @@ include("inc\header.php");
 </style>
 
 <body>
+	<form method="post" action="activar_materia.php">
 	<section class="form-register">
 		<center>
 		<h4>Registro Materias</h4> 
 	    </center>
-		<input class="controls" type="nMateria" name="Materia" id="Materia" placeholder="Nombre Materia">
-		<input class="controls" type="docente" name="docente" id="docente" placeholder="Docente">
-		<select class="controls" >
-		<option value="Horario A">Horario A</option>
-		<option value="Horario B">Horario B</option>
-		<option value="Horario C">Horario C</option>
-		<option value="Horario D">Horario D</option>
-		<option value="Horario E">Horario E</option>
+		<input class="controls" type="text" name="materia" id="Materia" placeholder="Nombre Materia">
+		<!-- <input class="controls" type="text" name="docente" id="docente" placeholder="Docente"> -->
+		<select class="controls" name="docente">
+			<?php
+			include_once("funciones.php");
+			// Create connection
+			$conn = connectSQL();
+			// Check connection
+			if (!$conn) {
+				die("Connection failed: " . mysqli_connect_error());
+			}
+			$query = "SELECT * FROM DOCENTES";
+			$result = ($conn->query($query));
+			while($row = $result->fetch_row()){
+				echo "<option value=". $row[0] . ">" . $row[1] . "</option>";
+			}
+			mysqli_close($conn);
+			?>
 	    </select>
-		<a href="menu.php"><input class="botons" type="submit" value="Registrar Materia"></a>
+		<input type="text" class="controls" name="curso" placeholder="Curso"/>
+		<input class="botons" type="submit" value="Registrar Materia"/>
 	</section>
+</form>
 </body>
 </html>

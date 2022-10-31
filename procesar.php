@@ -19,7 +19,7 @@
 	}
 
 	if($_POST['entity'] == "estudiante"){
-		$query = "SELECT password from estudiantes where NOMBRE = \"" . $username . "\"";
+		$query = "SELECT contrasena from estudiantes where NOMBRE = \"" . $username . "\"";
 		$result = ($conn->query($query))->fetch_row();
 
 		if($result[0] == $password){
@@ -28,11 +28,11 @@
 			header("Location: index.php");
 		}
 	}elseif ($_POST['entity'] == "profesor") {
-		$query = "SELECT password from docente where Nombre = \"" . $username . "\"";
+		$query = "SELECT contrasena from docentes where Nombre = \"" . $username . "\"";
 		$result = ($conn->query($query))->fetch_row();
 
 		if($result[0] == $password){
-			header("Location: profesor.php");
+			header("Location: VerEstudiantes.php");
 		}else{
 			header("Location: index.php");
 		}

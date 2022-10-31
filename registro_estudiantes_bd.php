@@ -15,8 +15,8 @@
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        $query = "INSERT INTO estudiantes(NOMBRE, CI, CURSO, CONTRASENA, NACIMIENTO)
-        values(\"" . $nombre . "\", " . $ci . ", \"" . $curso . "\", \"" . $contrasenia . "\", \"" . $nacimiento . "\");";
+        $query = "INSERT INTO estudiantes(NOMBRE, CI, CURSO, CONTRASENA)
+        values(\"" . $nombre . "\", " . $ci . ", \"" . $curso . "\", \"" . $contrasenia . "\")";
         mysqli_query($conn, $query);
         mysqli_close($conn);
         header("location: index.php");
