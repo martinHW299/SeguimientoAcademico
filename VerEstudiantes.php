@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>EstadoProblemas</title>
+<title>Estudiantes</title>
 </head>
 
 <body>
@@ -27,13 +27,13 @@
 	/* fetch object array */
 	$contador1 = 0;
 	while($row = mysqli_fetch_row($resultClone)){
-		$query = "SELECT * FROM parciales WHERE id_docente = \"" . $idDocente . "\"";
+		$query = "SELECT * FROM parciales WHERE id_docente = " . $idDocente . " AND nombre_materia = \"$row[0]\" AND nombre_curso = \"$row[1]\"";
 		$result1 = $conn->query($query);
 		while($row1 = mysqli_fetch_row($result1)){
-			setcookie('materias['. strval($contador1) . ']', $row[0]);
+			setcookie('materias['. strval($contador1) . ']', $row1[4]);
 			setcookie('estudiantes['. strval($contador1) . ']', $row1[3]);
 			setcookie('docente', $idDocente);
-			setcookie('curso', $row[1]);
+			setcookie('curso[' . strval($contador1) . ']', $row1[5]);
 			$contador1++;
 		}
 	}
@@ -49,7 +49,7 @@
 		    <th>Segundo Parcial</th>
 		    <th>Tercer Parcial</th>
 		  </tr>";
-		$query = "SELECT estudiantes.nombre, parciales.primer_parcial, parciales.segundo_parcial, parciales.tercer_parcial FROM parciales inner join estudiantes on parciales.id_estudiante = estudiantes.id_estudiante WHERE id_docente = \"" . $row[2] . "\"";
+		$query = "SELECT estudiantes.nombre, parciales.primer_parcial, parciales.segundo_parcial, parciales.tercer_parcial FROM parciales inner join estudiantes on parciales.id_estudiante = estudiantes.id_estudiante WHERE id_docente = " . $idDocente . " AND parciales.nombre_materia = \"$row[0]\"";
 		$result1 = $conn->query($query);
 
 		/* fetch object array */

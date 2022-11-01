@@ -23,7 +23,7 @@
 		$result = ($conn->query($query))->fetch_row();
 
 		if($result[0] == $password){
-			header("Location: estudiante.php");
+			header("Location: menu.php");
 		}else{
 			header("Location: index.php");
 		}

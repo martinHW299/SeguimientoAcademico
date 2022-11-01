@@ -1,14 +1,14 @@
 <?php
-	include_once("inc/head.php");
+	include_once("inc/headmenu.php");
 ?>
 <center>
 <table>
   <tr>
-    <th>Materia</th>
-    <th>Primer Parcial</th>
-    <th>Segundo Parcial</th>
-    <th>Tercer Parcial</th>
-    <th>Promedio</th>
+    <th> Materia </th>
+    <th> Primer Parcial </th>
+    <th> Segundo Parcial </th>
+    <th> Tercer Parcial </th>
+    <th> Promedio </th>
   </tr>
 
 <?php 
@@ -35,6 +35,6 @@
 	}
 	mysqli_close($mysqli);
 	echo "</table><br>";
-	echo "<button><a href=\"index.php\">Salir</a></button></center>";
+	echo "</center>";
 	include_once("inc/foot.php");
 ?>	
