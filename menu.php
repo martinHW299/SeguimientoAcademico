@@ -193,5 +193,5 @@ include("inc\headmenu.php");
 <br>
 
 <?php
-include("inc\foot.php");
+include("inc/foot.php");
 ?>
